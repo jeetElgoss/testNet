@@ -1,0 +1,38 @@
+﻿@model List<crud.Models.Domain.Employee>
+@{
+}
+
+<h2>Employee list</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th>Date of birth</th>
+        <th>Created on</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var employee in Model)
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.Salary</td>
+                <td>@employee.Department</td>
+                <td>@employee.DateOfBirth.ToString("d")</td>
+                <td>@employee.CreatedOn</td>
+                <td>
+                    <a href="Employees/View/@employee.Id">View</a>&nbsp;
+                    <a href="Employees/Delete/@employee.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
